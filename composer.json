@@ -1,0 +1,36 @@
+{
+    "name": "motwreen/permissions",
+    "type": "library",
+    "description": "Admin permissions and groups manager",
+    "keywords": [
+    	"acl",
+        "permissions",
+        "admin permissions gui",
+        "admin groups"
+    ],
+    "homepage": "https://motwreen.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmed Gad",
+            "email": "eng.ahmedmgad@gmail.com",
+            "homepage": "https://motwreen.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Motwreen\\Permissions\\": "src/"
+        }
+    },
+    "require": {
+        "laravelcollective/html": "^5.8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Motwreen\\Permissions\\ServiceProvider"
+            ]
+        }
+    }
+}
