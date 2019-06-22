@@ -20,7 +20,7 @@ class CreateGroupPermissionsTable extends Migration
             $table->timestamps();
 
             $table->foreign('group_id')->references('id')->on('admin_groups')->onDelete('cascade');
-            $table->foreign('permission_id')->references('id')->on('resources_permissions')->onDelete('cascade');
+            $table->foreign('permission_id')->references('id')->on('resource_permissions')->onDelete('cascade');
         });
     }
 
