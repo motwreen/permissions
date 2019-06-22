@@ -42,6 +42,9 @@ class ResourcesController extends Controller
 
         $controller = $controllers[$request->get('resource')];
 
+        if(Resource::where('resource',$controller)->exists())
+            return back()->withInput($request->all())->withErrors(['resource'=>'This Resource already defined, Please choose another one']);
+
         $resource = new Resource;
         $resource->resource = $controller;
         $resource->alias = $request->get('alias');
