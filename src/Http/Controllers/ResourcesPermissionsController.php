@@ -3,7 +3,6 @@
 namespace Motwreen\Permissions\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Traits\PermissionsTrait;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Motwreen\Permissions\Models\Resource;
@@ -13,7 +12,6 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ResourcesPermissionsController extends Controller
 {
-    use PermissionsTrait;
 
     public function index(Resource $resource)
     {
