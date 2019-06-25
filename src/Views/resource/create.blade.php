@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        {{ Form::open(['route'=>'permissions.resources.store','class'=>'form-horizontal']) }}
+                        {{ Form::open(['action'=>'\Motwreen\Permissions\Http\Controllers\ResourcesController@store','class'=>'form-horizontal']) }}
                             @include('Permissions::resource._form')
                         {{ Form::close() }}
                     </div>

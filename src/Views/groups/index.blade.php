@@ -15,7 +15,7 @@
                         @endif
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('permissions.groups.create')}}" class="btn btn-success">Add New</a>
+                            <a href="{{action('\Motwreen\Permissions\Http\Controllers\PermissionsGroupController@create')}}" class="btn btn-success">Add New</a>
                             <br>
                             <br>
                         </div>
@@ -32,8 +32,8 @@
                                     <td>{{$group->id}}</td>
                                     <td>{{$group->name}}</td>
                                     <td>
-                                        {{Form::open(['route'=>['permissions.groups.destroy',$group],'method'=>'delete'])}}
-                                            <a href="{{route('permissions.groups.edit',[$group])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
+                                        {{Form::open(['action'=>['\Motwreen\Permissions\Http\Controllers\PermissionsGroupController@destroy',$group],'method'=>'delete'])}}
+                                            <a href="{{action('\Motwreen\Permissions\Http\Controllers\PermissionsGroupController@edit',[$group])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete ?')"> <i class="fa fa-times"></i> Delete</button>
                                         {{Form::close()}}
                                     </td>

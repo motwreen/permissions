@@ -17,7 +17,7 @@
                         <label for="">Resource :
                             <code>{{$resource->resource}}</code>
                         </label>
-                        {{ Form::open(['route'=>['permissions.resources.methods.store',$resource],'class'=>'form-horizontal']) }}
+                        {{ Form::open(['action'=>['\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@store',$resource],'class'=>'form-horizontal']) }}
                             @include('Permissions::methods._form')
                         {{ Form::close() }}
                     </div>

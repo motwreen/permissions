@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-4 text-right">
 
-                                <a href="{{route('permissions.resources.methods.create',$resource)}}" class="btn btn-success">Add New</a>
+                                <a href="{{action('\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@create',$resource)}}" class="btn btn-success">Add New</a>
                             </div>
                         </div>
                         <br>
@@ -45,9 +45,9 @@
                                     <td>{{$method->short_action}}</td>
                                     <td>{{$method->alias}}</td>
                                     <td>
-                                        {{Form::open(['route'=>['permissions.resources.methods.destroy',$resource,$method],'method'=>'delete'])}}
+                                        {{Form::open(['action'=>['\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@destroy',$resource,$method],'method'=>'delete'])}}
                                         @if(!$resource->default)
-                                            <a href="{{route('permissions.resources.methods.edit',[$resource,$method])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
+                                            <a href="{{action('\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@edit',[$resource,$method])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete ?')"> <i class="fa fa-times"></i> Delete</button>
                                         @endif
                                         {{Form::close()}}

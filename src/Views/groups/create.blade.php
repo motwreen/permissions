@@ -13,7 +13,7 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        {{Form::open(['route'=>'permissions.groups.store'])}}
+                        {{Form::open(['action'=>'\Motwreen\Permissions\Http\Controllers\PermissionsGroupController@store'])}}
                             @include('Permissions::groups._form')
                         {{Form::close()}}
                     </div>

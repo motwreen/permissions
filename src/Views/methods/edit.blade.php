@@ -17,7 +17,7 @@
                         <label for="">Resource :
                             <code>{{$resource->resource}}</code>
                         </label>
-                        {{ Form::model($method,['route'=>['permissions.resources.methods.update',$resource,$method],'method'=>'patch']) }}
+                        {{ Form::model($method,['action'=>['\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@update',$resource,$method],'method'=>'patch']) }}
                             @include('Permissions::methods._form')
                         {{ Form::close() }}
                     </div>

@@ -13,7 +13,7 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        {{Form::model($group,['route'=>['permissions.groups.update',$group],'method'=>'patch'])}}
+                        {{Form::model($group,['action'=>['\Motwreen\Permissions\Http\Controllers\PermissionsGroupController@update',$group],'method'=>'patch'])}}
                             @include('Permissions::groups._form')
                         {{Form::close()}}
                     </div>

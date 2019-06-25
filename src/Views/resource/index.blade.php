@@ -15,7 +15,7 @@
                         @endif
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('permissions.resources.create')}}" class="btn btn-success">Add New</a>
+                            <a href="{{action('\Motwreen\Permissions\Http\Controllers\ResourcesController@create')}}" class="btn btn-success">Add New</a>
                             <br>
                             <br>
                         </div>
@@ -32,10 +32,10 @@
                                     <td>{{$resource->id}}</td>
                                     <td>{{$resource->alias}}</td>
                                     <td>
-                                        {{Form::open(['route'=>['permissions.resources.destroy',$resource],'method'=>'delete'])}}
-                                        <a href="{{route('permissions.resources.methods.index',[$resource])}}" class="btn btn-success"> <i class="fa fa-eye"></i> Show</a>
+                                        {{Form::open(['action'=>['\Motwreen\Permissions\Http\Controllers\ResourcesController@destroy',$resource],'method'=>'delete'])}}
+                                        <a href="{{action('\Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@index',[$resource])}}" class="btn btn-success"> <i class="fa fa-eye"></i> Show</a>
                                         @if(!$resource->default)
-                                            <a href="{{route('permissions.resources.edit',[$resource])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
+                                            <a href="{{action('\Motwreen\Permissions\Http\Controllers\ResourcesController@edit',[$resource])}}" class="btn btn-warning"> <i class="fa fa-edit"></i> Edit</a>
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure to delete ?')"> <i class="fa fa-times"></i> Delete</button>
                                         @endif
                                         {{Form::close()}}

@@ -47,7 +47,7 @@ class ResourcesPermissionsController extends Controller
         $permission->method     = $method;
         $permission->active     = $request->filled('active');
         $permission->save();
-        return redirect(route('permissions.resources.methods.index',$resource));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@index',$resource));
     }
 
     public function edit(Resource $resource,ResourcePermission $method)
@@ -68,13 +68,13 @@ class ResourcesPermissionsController extends Controller
         ]);
         $method->alias = $request->get('alias');
         $method->save();
-        return redirect(route('permissions.resources.methods.index',$resource));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@index',$resource));
     }
 
     public function destroy(Resource $resource,ResourcePermission $method)
     {
         $method->delete();
-        return redirect(route('permissions.resources.methods.index',$resource));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesPermissionsController@index',$resource));
     }
 
 }

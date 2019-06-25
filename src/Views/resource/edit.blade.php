@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        {{ Form::model($resource,['route'=>['permissions.resources.update',$resource],'method'=>'patch','class'=>'form-horizontal']) }}
+                        {{ Form::model($resource,['action'=>['\Motwreen\Permissions\Http\Controllers\ResourcesController@update',$resource],'method'=>'patch','class'=>'form-horizontal']) }}
                             @include('Permissions::resource._form')
                         {{ Form::close() }}
                     </div>

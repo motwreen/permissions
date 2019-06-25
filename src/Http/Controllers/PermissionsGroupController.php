@@ -24,14 +24,14 @@ class PermissionsGroupController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-           'name'=>'required',
-           'permissions'=>'required',
+           'name'       => 'required',
+           'permissions'=> 'required',
         ]);
         $group = new AdminGroup;
         $group->name = $request->get('name');
         $group->save();
         $group->permissions()->sync($request->get('permissions'));
-        return redirect(route('permissions.groups.index'));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\PermissionsGroupController@index'));
     }
 
     public function edit(AdminGroup $group)
@@ -43,21 +43,20 @@ class PermissionsGroupController extends Controller
     public function update(AdminGroup $group,Request $request)
     {
         $this->validate($request,[
-            'name'=>'required',
-            'permissions'=>'required',
+           'name'       => 'required',
+           'permissions'=> 'required',
         ]);
 
         $group->name = $request->get('name');
         $group->save();
         $group->permissions()->sync($request->get('permissions'));
-
-        return redirect(route('permissions.groups.index'));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\PermissionsGroupController@index'));
     }
 
     public function destroy(AdminGroup $group)
     {
         $group->delete();
-        return redirect(route('permissions.groups.index'));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\PermissionsGroupController@index'));
     }
 
 }

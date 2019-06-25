@@ -50,7 +50,7 @@ class ResourcesController extends Controller
         $resource->alias = $request->get('alias');
         $resource->active = $request->has('active');
         $resource->save();
-        return redirect(route('permissions.resources.index'));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesController@index'));
     }
 
     public function edit(Resource $resource,Request $request)
@@ -67,13 +67,13 @@ class ResourcesController extends Controller
         $resource->alias = $request->get('alias');
         $resource->active = $request->has('active');
         $resource->save();
-        return redirect(route('permissions.resources.index'));
-    }
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesController@index'));
+     }
 
     public function destroy(Resource $resource)
     {
         $resource->delete();
-        return redirect(route('permissions.resources.index'));
+        return redirect(action('Motwreen\Permissions\Http\Controllers\ResourcesController@index'));
     }
 
 
