@@ -22,7 +22,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/permissions.php', 'permissions'
+            __DIR__.'/Config/permissions.php', 'permissions'
         );
 
         $this->app->bind('Permissions', function () {
